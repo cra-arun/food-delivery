@@ -19,6 +19,11 @@ const errorHandler = require("./middlewares/errorHandler");
 app.use(cors());
 app.use(express.json());
 
+// Base route
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is running!");
+});
+
 // API routes
 app.use("/api/payment", paymentRoutes);
 app.use("/api/user", userRoutes);
